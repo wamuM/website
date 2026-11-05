@@ -26,6 +26,7 @@ main = do
     get "/license" $ file "views/license.html"
 
     get "/webring" $ file "views/webring.html"
+    get "/adyton" $ file "views/adyton.html"
 
     get "/mansion" $ file "views/mansion.html"
 

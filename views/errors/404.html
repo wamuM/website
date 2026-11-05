@@ -1,12 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title></title>
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-    <body>
-        <h1> OH NOOOOO - Error 404 </h1> 
-    </body>
-</html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - KERNEL PANIC</title>
+  <link rel="stylesheet" href="/static/css/404.css">
+</head>
+<body>
+  <main>
+    <header class="panic-header">
+       <h1>Error 404: Page not found</h1>
+      <p>
+      [ 0.00404 ] Kernel panic - not syncing: VFS: Unable to mount rootfs on block(0x04,0x04)
+      </p>
+    </header>
+    <section>
+      <p>CPU: 0 PID: 404 Comm: httpd Tainted: G        W  O      5.15.0-worm #1</p>
+      <p>Hardware name: WORMSTATION-CDE-80686/Motherboard, BIOS v4.04 04/04/1995</p>
+      
+      <p>Call Trace:</p>
+      <ol>
+        <li>show_stack+0x52/0x58</li>
+        <li>dump_stack_lvl+0x49/0x63</li>
+        <li>panic+0x114/0x2c8</li>
+        <li>mount_block_root+0x1a2/0x2a0</li>
+        <li><strong>sys_fetch_page(0x00000404) &lt;-- ERROR_PAGE_NOT_FOUND</strong></li>
+      </ol>
+    </section>
+
+    <section>
+        <p> Memory Dump at 0x00000404:</p>
+      <pre>
+0x00000404:  4e 4f 54 20  46 4f 55 4e  44 00 00 00  00 00 00 00   NOT FOUND.......
+0x00000414:  45 52 52 4f  52 5f 52 4f  55 54 45 5f  4d 49 53 53   ERROR_ROUTE_MISS
+0x00000424:  52 45 54 55  52 4e 5f 54  4f 5f 42 41  53 45 00 00   RETURN_TO_BASE..
+      </pre>
+    </section>
+
+    <section>
+      <p>--- [ System halted: Requested resource does not exist on this sector ] ---</p>
+      <nav>
+        <a href="/" >[ REBOOT TO ROOT ]</a>
+        <a href="/mansion">[ PARENT DIRECTORY ]</a>
+      </nav>
+    </section>
+  </main>
+</body>

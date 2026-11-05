@@ -1,0 +1,115 @@
+footer {
+  margin-top: auto;
+  position: relative;
+  height: var(--footer-height);
+  width: 100vw;
+  background-color: var(--footer-color);
+
+  border-top: 2px solid color-mix(in srgb, var(--footer-color), #ffffff 50%);
+  border-bottom: 2px solid color-mix(in srgb, var(--footer-color), #000000 60%);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--footer-color), #ffffff 25%);
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 4px;
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  color: color-mix(in srgb, var(--footer-color), #000000 90%);
+  user-select: none;
+  box-sizing: border-box;
+}
+
+
+footer::before, footer::after, footer>* {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(var(--footer-height) - 10px);
+    padding: 0 8px;
+    margin: 0;
+    font-weight:bold;
+}
+footer>*::before {
+    content:"["
+}
+footer>*::after {
+    content: "]"
+}
+footer>a::before,footer>a::after {
+    content: "";
+}
+footer::before {
+    content: "WormOS";
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+footer::after {
+    content: "1970-01-01 00:00";
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+footer > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(var(--footer-height) - 10px);
+  padding: 0 8px;
+  margin: 0;
+  
+  background-color: var(--footer-color);
+  color: color-mix(in srgb, var(--footer-color), #000000 90%);
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+  box-sizing: border-box;
+
+  border-top: 1px solid color-mix(in srgb, var(--footer-color), #000000 45%);
+  border-left: 1px solid color-mix(in srgb, var(--footer-color), #000000 45%);
+  border-right: 1px solid color-mix(in srgb, var(--footer-color), #ffffff 60%);
+  border-bottom: 1px solid color-mix(in srgb, var(--footer-color), #ffffff 60%);
+  
+  box-shadow: inset 1px 1px 0 color-mix(in srgb, var(--footer-color), #000000 25%);
+}
+
+footer > a {
+  text-decoration: underline;
+}
+
+footer > a:hover{
+  background-color: color-mix(in srgb, var(--footer-color), #ffffff 25%);
+  cursor: crosshair;
+}
+
+
+footer > a:active {
+  background-color: color-mix(in srgb, var(--footer-color), #000000 15%);
+  color: color-mix(in srgb, var(--footer-color), #ffffff 95%);
+  border-top: 1px solid color-mix(in srgb, var(--footer-color), #000000 75%);
+  border-left: 1px solid color-mix(in srgb, var(--footer-color), #000000 75%);
+  border-right: 1px solid color-mix(in srgb, var(--footer-color), #ffffff 30%);
+  border-bottom: 1px solid color-mix(in srgb, var(--footer-color), #ffffff 30%);
+}
+
+@media (max-width: var(--max-width)) {
+  /* 4. Allow footer traybar items to wrap if needed */
+  footer {
+    margin-bottom: 0px;
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  footer::after, footer::before {
+        display: none;
+        content: " ";
+  }
+
+  /* 5. Scale down retro font sizes for smaller screens */
+  body {
+    font-size: 0.9rem;
+  }
+}

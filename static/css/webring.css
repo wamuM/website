@@ -10,9 +10,11 @@
     padding: 0px;
 }
 body {
+    background-attachment: scroll;
+    background-repeat: no-repeat;
     background-image: url("/static/img/bliss.jpg");
-    background-color: cyan;    
-    color: blue;
+    background-color: darkgreen;    
+    color: green;
 
     font-family: var(--font-mono);
     font-size: 16px;
@@ -108,8 +110,7 @@ main li{
     width: 740px;
     background-color: var(--wood-bg);
     z-index: top;
-}
-main li{
+
   background: var(--wood-bg, #c0c0c0);
   border: 2px solid color-mix(in srgb, var(--wood-bg), #000 15%);
   
@@ -134,3 +135,17 @@ main li a {
     text-transform: uppercase;
     font-weight: bold;
 }
+
+
+@media (max-width: 799.99px) {
+
+main li {
+    width: 100vw !important;
+}
+main li a {
+    padding: 20px;
+    width: calc(100% - 20px);
+}
+}
+
+

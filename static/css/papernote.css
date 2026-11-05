@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap');
+:root {
+    --paper-bg: #deb887;
+    --corner-size: 32px;
+}
+.papernote {
+  position: relative;
+  font-family: "Cabin Sketch", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background: var(--paper-bg);
+  --border: 20px;
+  border: var(--paper-bg) solid var(--border);
+  background-image: linear-gradient(
+    to bottom,
+    transparent calc(100% - 1px),
+    black 100%
+    );
+  background-size: 100% 1.5rem;
+ 
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--corner-size)) 0,
+    100% var(--corner-size),
+    100% 100%,
+    0 100%
+  );
+}
+
+.papernote::before{
+  display:block;
+  content: "";
+  position: absolute;
+  top: calc(0px - var(--border));
+  left: calc(100% - var(--corner-size) + var(--border) + 2px);
+  width: var(--corner-size);
+  height: var(--corner-size);
+
+  background-color: color-mix(in srgb, var(--paper-bg), black 15%);
+  
+  filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.3));
+  pointer-events: none;
+}
+
+.papernote * {
+  color: black;
+  list-style: none;
+  text-decoration: none;
+}
+.papernote li {
+
+}
+.papernote li:hover {
+    text-decoration: line-through;
+}

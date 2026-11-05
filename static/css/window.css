@@ -1,0 +1,114 @@
+.window {
+  background-color: var(--bg-window);
+  border: var(--border-thickness) solid var(--border-color);
+  box-shadow: var(--shadow-thickness) var(--shadow-thickness) 0px var(--shadow-color);
+  --padding: 24px;
+  padding: var(--padding);
+  padding-top: max(var(--padding), var(--titlebar-height));
+  overflow: show;
+  position: relative;
+}
+main.window::before {
+    content: '[x] [-] wamu_M - ' attr(data-title, 'Main Page Content');
+}
+
+header.window::before{
+    content: '[x] [-] wamu_M - ' attr(data-title, 'Page Header');
+}
+
+nav.window::before {
+    content: '[X] [-] wamu_M - ' attr(data-title, 'Page Navigation');
+}
+
+section.window::before {
+    content: '[X] [-] wamu_M - ' attr(data-title, 'Untitled Window');
+}
+
+aside.window::before {
+    content: '[x] [-] wamu_M - ' attr(data-title, 'Other Stuff');
+}
+.window::before {
+    display:block;
+    background-color:var(--titlebar-color);
+    position:absolute;
+    top: calc(0px - var(--border-thickness));
+    left: 0px; 
+    height: var(--titlebar-height);
+    width: calc(100% - 8px);
+  
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 28px;
+    padding: 0px;
+    padding-left: 8px;
+
+    border: var(--border-thickness) 
+            solid var(--titlebar-color);
+    border-left: 0px;
+
+    overflow:hidden;
+}
+.window:hover::before{
+    color: var(--text-terminal);
+}
+.window > :first-child {
+    margin-top: 10px;
+}
+
+
+.window  h1, .window  h2, .window  h3 {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  border-bottom: var(--line-height) solid var(--line-color);
+  padding-bottom: 4px;
+}
+.window  h1::before {
+  content: "$ ";
+  color: var(--accent);
+}
+
+.window  p {
+  margin-bottom: 14px;
+}
+
+.window  a {
+  color: var(--text-main);
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.window  a:hover {
+  background-color: var(--bg-canvas);
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.window ul {
+  list-style-type: none;
+  margin-bottom: 14px;
+}
+
+.window li::before {
+  content: ">\00a0";
+  font-weight: bold;
+  color: var(--accent);
+}
+.window li:hover::before{
+  content: "\00a0>";
+}
+
+
+.window pre,.window code {
+  background-color: var(--bg-terminal);
+  color: var(--text-terminal);
+  font-family: var(--font-mono);
+  padding: 12px;
+  overflow-x: auto;
+  display: block;
+}
+

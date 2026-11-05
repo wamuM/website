@@ -4,13 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Mansion - wamu_M</title>
-        <link href="static/css/generic.css" rel="stylesheet">
+        <link href="static/css/mansion.css" rel="stylesheet">
     </head>
     <body>
-        <header>
+        <header class="window">
             <h1>wamu_M's Mansion</h1> 
         </header>
-        <nav>
+        <nav class="papernote">
             <ul>
                 <li><a href="/">Leave</a></li>
                 <li><a href="/blog">Blog</a></li>
@@ -18,20 +18,7 @@
                 <li><a href="/webring">Webring</a></li>
             </ul>
         </nav>
-        <main>
-            <section>
-                <h2> About me </h2>
-                <p>
-                I'm someone that gets deeply fascinated by a lot of stuff. Which is why I love the internet. </br>
-                I'm studying CS at UPC and considering going down the theortical lane, focusing on type theory, category theory, etc.
-                The other thing occupying my life is Sailing, I love being in the sea and I work as a Sailing Coach in the municipal sailing center. One day I'll own a sailboat and she will apear in this website.
-                And to stay in shape I try to go climbing weekly (I have a pretty strong fear of heights so my results are a bit lacking...).
-                During my free time I mainly consume youtube videos or web novels (specially WuXia).
-
-                I feel very aligned with the FOSS movement which is why I preside the Linux association at my university (Daily driving NixOS rn).
-                </p>
-            </section>
-            <section>
+            <aside class="window">
                 <h2> Latest Stuff </h2>
                 <article>
                     <h3>Blog Post</h3>
@@ -45,6 +32,19 @@
                         
                     </div>
                 </article>
+            </aside>
+        <main class="window">
+            <section>
+                <h2> About me </h2>
+                <p>
+                I'm someone that gets deeply fascinated by a lot of stuff. Which is why I love the internet. </br>
+                I'm studying CS at UPC and considering going down the theortical lane, focusing on type theory, category theory, etc.
+                The other thing occupying my life is Sailing, I love being in the sea and I work as a Sailing Coach in the municipal sailing center. One day I'll own a sailboat and she will apear in this website.
+                And to stay in shape I try to go climbing weekly (I have a pretty strong fear of heights so my results are a bit lacking...).
+                During my free time I mainly consume youtube videos or web novels (specially WuXia).
+
+                I feel very aligned with the FOSS movement which is why I preside the Linux association at my university (Daily driving NixOS rn).
+                </p>
             </section>
             <section>
                 <h2>Explore the mansion</h2>
@@ -67,7 +67,8 @@
         <footer>
             <a rel="me" href="gemini://gmi.wamu-m.com">gemini capsule</a>
             <a href="/ai-usage">AI usage</a>
-            <a href="/license">license (CC BY 4.0)</a>
+            <a href="/license">license</a>
+            <a href="/contact">contact</a>
         </footer>
     </body>
 </html>

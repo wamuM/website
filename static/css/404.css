@@ -1,0 +1,187 @@
+:root {
+  --bg-color: #04040c;
+  --text-color: #d0d0d0;
+  --panic-red: #ff3333;
+  --cyan-accent: #00e5ff;
+  --scanline: rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body::before {
+  content: "";
+  display: block;
+  position: fixed;
+  inset: 0;       
+  
+  background-image: linear-gradient(
+    to bottom,
+    transparent 50%,
+    var(--scanline, rgba(0, 0, 0, 0.4)) 51%
+  );
+  background-size: 100% 4px;
+  
+  z-index: 9999;
+  pointer-events: none;
+
+}
+
+body {
+  position:relative;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  line-height: 1.4;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  max-width: 860px;
+  width: 100%;
+}
+
+header {
+  background-color: var(--panic-red);
+  color: #000;
+  font-weight: bold;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  color: #fff;
+  margin-top: 1rem;
+}
+
+ol {
+  list-style: none;
+  counter-reset: step;
+  padding-left: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: #888;
+}
+
+ol li {
+  margin-top: 0.2rem;
+}
+
+ol li::before {
+  counter-increment: step;
+  content: "[ " counter(step) " ] ";
+  color: var(--cyan-accent);
+}
+
+
+section pre {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px dashed #333;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  color: var(--cyan-accent);
+}
+
+
+nav {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--bg-color);
+  background-color: var(--text-color);
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  font-weight: bold;
+  opacity: 1;
+  animation: 
+    tuiBlink 1.2s steps(1) infinite;
+}
+
+nav a:hover,
+nav a:focus {
+  opacity: 1;
+  background-color: var(--cyan-accent);
+  color: #000;
+  outline: none;
+}
+
+nav:hover a {
+    animation: none;
+}
+
+
+@keyframes tuiBlink {
+  0%, 49% {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    outline: none;
+  }
+  50%, 100% {
+    background-color: transparent;
+    color: var(--cyan-accent);
+    outline: 1px dashed var(--cyan-accent);
+  }
+}
+
+main::after {
+  content: "_";
+  display: inline-block;
+  opacity: 0;
+  animation: 
+    printLine 0.01s steps(1) 1.5s both,
+    blink 1s steps(2, start) 1.5s infinite;
+  color: var(--cyan-accent);
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+@keyframes blink {
+  to { opacity: 0; }
+}
+
+header,
+main section p,
+ol li,
+pre,
+nav {
+  opacity: 0;
+  animation: printLine 0.01s steps(1) both;
+}
+
+header { animation-delay: 0.1s; }
+main section:nth-of-type(1) p:nth-of-type(1) { animation-delay: 0.2s; }
+main section:nth-of-type(1) p:nth-of-type(2) { animation-delay: 0.3s; }
+main section:nth-of-type(1) p:nth-of-type(3) { animation-delay: 0.4s; }
+ol li:nth-child(1)   { animation-delay: 0.5s; }
+ol li:nth-child(2)   { animation-delay: 0.6s; }
+ol li:nth-child(3)   { animation-delay: 0.7s; }
+ol li:nth-child(4)   { animation-delay: 0.8s; }
+ol li:nth-child(5)   { animation-delay: 0.9s; }
+main section:nth-of-type(2) p { animation-delay: 1.0s; }
+pre { animation-delay: 1.2s; }
+main section:nth-of-type(3) p { animation-delay: 1.3s; }
+main nav { animation-delay: 1.4s; }
+
+@keyframes printLine {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
