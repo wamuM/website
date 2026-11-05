@@ -1,0 +1,293 @@
+@import '/static/css/crt.css';
+
+:root {
+  --bg-canvas: #c8bfe7;
+  --bg-window: #fff;    
+  --bg-terminal: #16131d; 
+  --text-main: #000;  
+  --text-terminal: #c8bfe7;
+  --accent: #7a6fa0; 
+
+  --border-color: #c3c6b8;
+  --border-thickness: 2px;
+
+  --line-color: var(--border-color);
+  --line-height: 3px;
+
+  --shadow-color: #000;
+  --shadow-thickness: 6px;
+
+  --titlebar-height: 28px;
+  --titlebar-color: #232126;
+
+  --footer-height: 32px;
+  --footer-color: var(--border-color);
+
+  --font-mono: "Courier New", Courier, monospace, ui-monospace;
+  --container-width: 750px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  image-rendering: pixelated;
+}
+
+html {
+  height:100%;
+}
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--bg-canvas);
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  line-height: 1.5;
+
+  display: flex;
+  flex-direction: column;
+}
+
+body > :first-child {
+    margin-top: 20px;
+}
+
+body > main, body > header, body > nav{
+  max-width: var(--container-width);
+  margin: 0 auto 20px auto;
+  background-color: var(--bg-window);
+  border: var(--border-thickness) solid var(--border-color);
+  box-shadow: var(--shadow-thickness) var(--shadow-thickness) 0px var(--shadow-color);
+  --padding: 24px;
+  padding: var(--padding);
+  overflow: show;
+}
+main::before {
+    content: '[x] [-] wamu_M - Main Page Content';
+}
+
+header::before{
+    content: '[x] [-] wamu_M - Page Header';
+}
+
+body > nav::before {
+    content: '[X] [-] wamu_M - Page Navigation';
+}
+main::before, header::before, body > nav::before{
+    display:block;
+    height:10px;
+    background-color:var(--titlebar-color);
+    position:relative;
+    top: calc(0px - var(--titlebar-height) + var(--border-thickness));
+    left: calc(0px - var(--padding));
+    right: 0;
+    height: var(--titlebar-height);
+    width: calc(var(--container-width) - 2*var(--border-thickness) - var(--shadow-thickness));
+  
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 28px;
+    padding-left: 8px;
+  
+    box-sizing: content-box;
+}
+main:hover::before, header:hover::before, body > nav:hover::before{
+    color: var(--text-terminal);
+}
+
+
+/* Headers & Typography */
+h1, h2, h3 {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  border-bottom: var(--line-height) solid var(--line-color);
+  padding-bottom: 4px;
+}
+
+h1::before {
+  content: "$ ";
+  color: var(--accent);
+}
+
+p {
+  margin-bottom: 14px;
+}
+
+a {
+  color: var(--text-main);
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+a:hover {
+  background-color: var(--bg-canvas);
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin-bottom: 14px;
+}
+
+li::before {
+  content: ">\00a0";
+  font-weight: bold;
+  color: var(--accent);
+}
+li:hover::before{
+  content: "\00a0>";
+}
+
+
+pre, code {
+  background-color: var(--bg-terminal);
+  color: var(--text-terminal);
+  font-family: var(--font-mono);
+  padding: 12px;
+  overflow-x: auto;
+  display: block;
+}
+
+footer {
+  margin-top: auto;
+  position: relative;
+  height: var(--footer-height);
+  background-color: var(--footer-color);
+
+  border-top: 2px solid color-mix(in srgb, var(--footer-color), #ffffff 50%);
+  border-bottom: 2px solid color-mix(in srgb, var(--footer-color), #000000 60%);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--footer-color), #ffffff 25%);
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 4px;
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  color: color-mix(in srgb, var(--footer-color), #000000 90%);
+  user-select: none;
+  box-sizing: border-box;
+}
+
+
+footer::before, footer::after, footer>* {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(var(--footer-height) - 10px);
+    padding: 0 8px;
+    margin: 0;
+    font-weight:bold;
+}
+footer>*::before {
+    content:"["
+}
+footer>*::after {
+    content: "]"
+}
+footer>a::before,footer>a::after {
+    content: "";
+}
+footer::before {
+    content: "WormOS";
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+footer::after {
+    content: "1970-01-01 00:00";
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+footer > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(var(--footer-height) - 10px);
+  padding: 0 8px;
+  margin: 0;
+  
+  background-color: var(--footer-color);
+  color: color-mix(in srgb, var(--footer-color), #000000 90%);
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+  box-sizing: border-box;
+
+  border-top: 1px solid color-mix(in srgb, var(--footer-color), #000000 45%);
+  border-left: 1px solid color-mix(in srgb, var(--footer-color), #000000 45%);
+  border-right: 1px solid color-mix(in srgb, var(--footer-color), #ffffff 60%);
+  border-bottom: 1px solid color-mix(in srgb, var(--footer-color), #ffffff 60%);
+  
+  box-shadow: inset 1px 1px 0 color-mix(in srgb, var(--footer-color), #000000 25%);
+}
+
+footer > a {
+  text-decoration: underline;
+}
+
+footer > a:hover{
+  background-color: color-mix(in srgb, var(--footer-color), #ffffff 25%);
+  cursor: crosshair;
+}
+
+
+footer > a:active {
+  background-color: color-mix(in srgb, var(--footer-color), #000000 15%);
+  color: color-mix(in srgb, var(--footer-color), #ffffff 95%);
+  border-top: 1px solid color-mix(in srgb, var(--footer-color), #000000 75%);
+  border-left: 1px solid color-mix(in srgb, var(--footer-color), #000000 75%);
+  border-right: 1px solid color-mix(in srgb, var(--footer-color), #ffffff 30%);
+  border-bottom: 1px solid color-mix(in srgb, var(--footer-color), #ffffff 30%);
+}
+
+@media (max-width: 799.99px) {
+  /* 2. Allow windows to stretch to full viewport width */
+  main, header, body > nav{
+    padding: 10px!important;
+    margin-top: calc(1px + var(--titlebar-height)) !important;
+    width: 100vw!important;
+    max-width: 100%!important;
+  }
+
+  body > *::after , body > *::before {
+    display: block;
+    left: -11px;
+    width: calc(100vw - 2*var(--border-thickness))!important;
+  }
+
+
+  header nav {
+    margin-left: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* 4. Allow footer traybar items to wrap if needed */
+  footer {
+    margin-bottom: 0px;
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  footer::after, footer::before {
+        display: none;
+        content: " ";
+  }
+
+  /* 5. Scale down retro font sizes for smaller screens */
+  body {
+    font-size: 0.9rem;
+  }
+}

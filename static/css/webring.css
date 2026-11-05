@@ -1,0 +1,136 @@
+:root {
+    --wood-bg: #7f5d3a;
+    --wood-color: #dce5eb;
+
+    --font-mono: "Courier New", Courier, monospace, ui-monospace;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    background-image: url("/static/img/bliss.jpg");
+    background-color: cyan;    
+    color: blue;
+
+    font-family: var(--font-mono);
+    font-size: 16px;
+    line-height: 1.5;
+}
+ul {
+list-style-type:none;
+}
+header a, header h1 {
+  position: relative;
+  left: 100px;
+  color: black;
+  text-decoration: none;
+  justify: center; 
+}
+header a {
+    text-decoration: underline;
+}
+header a:hover::before {
+    content:">"
+}
+header a:hover::after {
+    content:"<"
+}
+header {
+  top: 150px;
+  /* gleft: calc(50% - 200px); */
+  position: absolute;
+  width: 400px;
+  height: 120px;
+  background: #ffffff;
+  border-radius: 50px; 
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.15));
+  z-index: 0;
+}
+
+header::before,
+header::after {
+  content: '';
+  position: absolute;
+  background: inherit; /* Matches main cloud background */
+  border-radius: 50%;
+  z-index: -1;
+}
+
+header::before {
+  width: 160px;
+  height: 160px;
+  top: -80px;
+  left: 50px;
+}
+
+header::after {
+  width: 200px;
+  height: 200px;
+  top: -100px;
+  right: 50px;
+}
+/* CSS */
+header {
+  animation: move-right-wrap 20s cubic-bezier(0,0.7,1,0.3) infinite;
+  will-change: transform;
+}
+
+@keyframes move-right-wrap {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+main ul{
+    padding: 0px;
+    margin-top: 300px;
+}
+main::before{
+    display:block;
+    position:absolute;
+    height:90%;
+    width: 20px;
+    left: calc(50%);
+    content: " ";
+    background-color: color-mix(in srgb, var(--wood-bg), #000 15%);
+    z-index: -100;
+
+}
+main li{
+    display: block;
+    margin: 20px auto 20px auto;
+    text-align: center;
+    width: 740px;
+    background-color: var(--wood-bg);
+    z-index: top;
+}
+main li{
+  background: var(--wood-bg, #c0c0c0);
+  border: 2px solid color-mix(in srgb, var(--wood-bg), #000 15%);
+  
+  transform: rotateX(0deg) rotateY(0deg) translateZ(10px);
+  transform-style: preserve-3d;
+  
+  box-shadow: -12px 18px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main li:hover {
+  transform: rotateX(10deg) rotateY(-10deg);
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.25);
+}
+
+main li a {
+    padding: 20px;
+    display: inline-block;
+    width: 100%;
+    color: var(--wood-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
