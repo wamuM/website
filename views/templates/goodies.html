@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>wamu_M's Internet Goodies</title>
+        <link href="static/css/generic.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="papernote">
+            <a href="/mansion">Go back to mansion</a>
+        </nav>
+         <header class="window">
+             <h1>List of Goodies</h1>
+             <a href="/goodies/random">Go to a random goodie</a>
+        </header>
+         <main class="window">
+             {% for g in goodies %}
+             <article>
+                <h2>{{g.name}}</h2>  
+                <p>{{g.description}}</p>
+                <a href="/goodies/{{g.id}}">Go</a>
+             </article>
+             {% endfor %}
+         </main> 
+    </body>
+</html>

@@ -6,6 +6,9 @@ import Text.Read (readMaybe)
 import Web.Scotty
 import Network.Wai.Middleware.Static (staticPolicy, noDots, hasPrefix, (>->))
 
+import Routes.Rooms (roomsRoutes)
+import Routes.Goodies (goodiesRoutes)
+
 main :: IO ()
 main = do
   portEnv <- lookupEnv "PORT"
@@ -29,6 +32,9 @@ main = do
     get "/adyton" $ file "views/adyton.html"
 
     get "/mansion" $ file "views/mansion.html"
+
+    roomsRoutes
+    goodiesRoutes
 
     notFound $ file "views/errors/404.html"
 

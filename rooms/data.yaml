@@ -1,0 +1,11 @@
+nothing:
+  name: Nothing
+  description: A whole load of nothing
+  path: "nothing"
+  visible: true
+
+fundraiser:
+  name: Fundraiser for Jeff Bezos
+  description: Every donation counts. Today, it's Jeff Bezos. Tomorrow, it could be you.
+  path: "fundraiser"
+  visible: true

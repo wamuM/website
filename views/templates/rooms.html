@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>wamu_M's Rooms</title>
+        <link href="static/css/generic.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="papernote">
+            <a href="/mansion">Go back to mansion</a>
+        </nav>
+         <header class="window">
+             <h1>List of Rooms</h1>
+             <a href="/rooms/random">Go to a random room</a>
+        </header>
+         <main class="window">
+             {% for room in rooms %}
+             <article>
+                <h2>{{room.name}}</h2>  
+                <p>{{room.description}}</p>
+                <a href="/rooms/{{room.id}}">Go</a>
+             </article>
+             {% endfor %}
+         </main> 
+    </body>
+</html>

@@ -14,6 +14,8 @@ build-type:     Simple
 executable webserver
   main-is: Main.hs
   other-modules:
+      Routes.Goodies
+      Routes.Rooms
       Paths_webserver
   hs-source-dirs:
       src
@@ -23,8 +25,10 @@ executable webserver
   build-depends:
       aeson
     , base >=4.7 && <5
+    , containers
     , directory
     , filepath
+    , ginger
     , http-types
     , random
     , scotty

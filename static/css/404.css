@@ -1,8 +1,9 @@
 :root {
   --bg-color: #04040c;
-  --text-color: #d0d0d0;
+  --text-color: #888;
   --panic: #ff3333;
-  --cyan-accent: #00e5ff;
+  --accent: white;
+  --hover: #c8bfe7;
   --scanline: rgba(0, 0, 0, 0);
 }
 
@@ -49,7 +50,7 @@ main {
   width: 100%;
 }
 
-header {
+h1 {
   background-color: var(--panic);
   color: #000;
   font-weight: bold;
@@ -57,40 +58,36 @@ header {
   margin-bottom: 1.5rem;
 }
 
+h1:hover {
+  background-color: var(--panic);
+  color: var(--accent);
+}
+
 p {
-  color: #fff;
+  color: var(--text-color);
   margin-top: 1rem;
 }
 
+
 ol {
   list-style: none;
-  counter-reset: step;
-  padding-left: 0.5rem;
   margin-bottom: 1.5rem;
-  color: #888;
 }
 
 ol li {
   margin-top: 0.2rem;
 }
 
+p::before,
 ol li::before {
-  counter-increment: step;
-  content: "[ " counter(step) " ] ";
-  color: var(--cyan-accent);
+  color: var(--accent);
+  content: "[0.000404] ";
 }
-
-
-section pre {
-  background-color: rgba(255, 255, 255, 0.04);
-  border: 1px dashed #333;
-  padding: 0.75rem;
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
-  overflow-x: auto;
-  color: var(--cyan-accent);
+p:hover::before,
+ol li:hover::before {
+  color: var(--panic);
+  content: "[0.000404] ";
 }
-
 
 nav {
   display: flex;
@@ -101,39 +98,17 @@ nav {
 
 nav a {
   color: var(--bg-color);
-  background-color: var(--text-color);
+  background-color: var(--accent);
   text-decoration: none;
   padding: 0.4rem 0.8rem;
   font-weight: bold;
-  opacity: 1;
-  animation: 
-    tuiBlink 1.2s steps(1) infinite;
 }
 
 nav a:hover,
 nav a:focus {
-  opacity: 1;
-  background-color: var(--cyan-accent);
-  color: #000;
-  outline: none;
-}
-
-nav:hover a {
-    animation: none;
-}
-
-
-@keyframes tuiBlink {
-  0%, 49% {
-    background-color: var(--text-color);
-    color: var(--bg-color);
-    outline: none;
-  }
-  50%, 100% {
-    background-color: transparent;
-    color: var(--cyan-accent);
-    outline: 1px dashed var(--cyan-accent);
-  }
+  background-color: var(--hover);
+  text-decoration: underline;
+  cursor: crosshair;
 }
 
 main::after {
@@ -143,7 +118,7 @@ main::after {
   animation: 
     printLine 0.01s steps(1) 1.5s both,
     blink 1s steps(2, start) 1.5s infinite;
-  color: var(--cyan-accent);
+  color: var(--accent);
   font-weight: bold;
   margin-top: 1rem;
 }
@@ -155,7 +130,6 @@ main::after {
 header,
 main section p,
 ol li,
-pre,
 nav {
   opacity: 0;
   animation: printLine 0.01s steps(1) both;
@@ -171,7 +145,6 @@ ol li:nth-child(3)   { animation-delay: 0.7s; }
 ol li:nth-child(4)   { animation-delay: 0.8s; }
 ol li:nth-child(5)   { animation-delay: 0.9s; }
 main section:nth-of-type(2) p { animation-delay: 1.0s; }
-pre { animation-delay: 1.2s; }
 main section:nth-of-type(3) p { animation-delay: 1.3s; }
 main nav { animation-delay: 1.4s; }
 

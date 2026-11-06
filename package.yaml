@@ -16,6 +16,8 @@ dependencies:
   - random
   - wai-middleware-static
   - http-types
+  - containers
+  - ginger
 
 
 executables:
