@@ -95,17 +95,17 @@ footer > a:active {
   border-bottom: 1px solid color-mix(in srgb, var(--footer-color), #ffffff 30%);
 }
 
-@media (max-width: var(--max-width)) {
+@media (max-width: 800px) {
   /* 4. Allow footer traybar items to wrap if needed */
   footer {
     margin-bottom: 0px;
     flex-wrap: wrap;
-    height: auto;
+    height: auto!important;
   }
 
   footer::after, footer::before {
         display: none;
-        content: " ";
+        content: "";
   }
 
   /* 5. Scale down retro font sizes for smaller screens */

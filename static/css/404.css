@@ -1,9 +1,9 @@
 :root {
   --bg-color: #04040c;
   --text-color: #d0d0d0;
-  --panic-red: #ff3333;
+  --panic: #ff3333;
   --cyan-accent: #00e5ff;
-  --scanline: rgba(0, 0, 0, 0.4);
+  --scanline: rgba(0, 0, 0, 0);
 }
 
 * {
@@ -21,7 +21,7 @@ body::before {
   background-image: linear-gradient(
     to bottom,
     transparent 50%,
-    var(--scanline, rgba(0, 0, 0, 0.4)) 51%
+    var(--scanline) 51%
   );
   background-size: 100% 4px;
   
@@ -50,7 +50,7 @@ main {
 }
 
 header {
-  background-color: var(--panic-red);
+  background-color: var(--panic);
   color: #000;
   font-weight: bold;
   padding: 0.5rem 0.75rem;

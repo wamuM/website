@@ -19,6 +19,18 @@ body > :not(footer) {
     margin: 10px auto 10px auto;
     width: 750px;
     max-width: 750px ;
+
+}
+
+@media (max-width: 800px) {
+  /* 4. Allow footer traybar items to wrap if needed */
+  body > :not(footer) {
+ 	width: calc(100% - 20px);
+	margin: 10px;
+  }
+  body {
+    font-size: 0.9rem;
+  }
 }
 
 

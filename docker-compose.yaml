@@ -3,7 +3,10 @@ services:
     build: .
     tty: true
     ports:
-      - "8080:8080"
+      - "127.0.0.1:8080:8080"
+    restart: unless-stopped
     volumes:
+      - ./rooms:/app/rooms
+      - ./goodies:/app/goodies
       - ./static:/app/static
       - ./views:/app/views
