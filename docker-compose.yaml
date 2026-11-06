@@ -1,0 +1,9 @@
+services:
+  webserver:
+    build: .
+    tty: true
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./static:/app/static
+      - ./views:/app/views
