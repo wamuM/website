@@ -1,0 +1,50 @@
+:root {
+    --button-bg-color: #c3c6b8;
+    --button-color: #black;
+    --button-screen-bg-color:#3e3f3b;
+    --button-screen-color: #fff;
+    --button-thickness: 6px;
+}
+.green {
+    --button-bg-color: #8fbc8f;
+    --button-screen-bg-color: #303c30;
+    --button-screen-color: #fff;
+}
+.button {
+  background-color:  var(--button-bg-color);
+  padding: 10px;
+  border-top: var(--button-thickness) solid color-mix(in srgb, var(--button-bg-color), #ffffff 50%);
+  border-left: var(--button-thickness)solid color-mix(in srgb, var(--button-bg-color), #ffffff 50%);
+  border-bottom: var(--button-thickness)solid color-mix(in srgb, var(--button-bg-color), #000000 60%);
+  border-right: var(--button-thickness)solid color-mix(in srgb, var(--button-bg-color), #000000 60%);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--button-bg-color), #ffffff 25%);
+}
+
+.screen {
+    display: block;
+    padding: 10px;
+    height: auto;
+    color: var(--button-screen-color);
+
+    background-color: var(--button-screen-bg-color);
+    --line-color: color-mix(in srgb, var(--button-screen-bg-color), rgba(0, 0, 0, 0.2) 35%);
+    background-image: 
+        linear-gradient(to right, var(--line-color) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--line-color) 1px, transparent 1px);
+    background-size: 3px 3px;
+    border-bottom: var(--button-thickness) solid color-mix(in srgb, var(--button-bg-color), #ffffff 50%);
+    border-right:  var(--button-thickness) solid color-mix(in srgb, var(--button-bg-color), #ffffff 50%);
+    border-top:    var(--button-thickness) solid color-mix(in srgb, var(--button-bg-color), #000000 60%);
+    border-left:   var(--button-thickness) solid color-mix(in srgb, var(--button-bg-color), #000000 60%);
+}
+.button li, .screen li {
+    list-style-type: none;
+}
+.button a {
+    color: var(--button-color);
+}
+.screen a {
+    color: var(--button-screen-color);
+}
+
+

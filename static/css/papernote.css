@@ -1,17 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('/static/css/root.css');
 
 :root {
-    --paper-bg: #deb887;
-    --corner-size: 32px;
+  --papernote-bg-color: #deb887;
+  --papernote-corner-size: 32px;
 }
+
 .papernote {
   position: relative;
   font-family: "Patrick Hand", sans-serif;
   font-weight: 400;
   font-style: normal;
-  background: var(--paper-bg);
+  background: var(--papernote-bg-color);
   --border: 20px;
-  border: var(--paper-bg) solid var(--border);
+  border: var(--papernote-bg-color) solid var(--border);
   background-image: linear-gradient(
     to bottom,
     transparent calc(100% - 1px),
@@ -21,8 +23,8 @@
  
   clip-path: polygon(
     0 0,
-    calc(100% - var(--corner-size)) 0,
-    100% var(--corner-size),
+    calc(100% - var(--papernote-corner-size)) 0,
+    100% var(--papernote-corner-size),
     100% 100%,
     0 100%
   );
@@ -33,11 +35,11 @@
   content: "";
   position: absolute;
   top: calc(0px - var(--border));
-  left: calc(100% - var(--corner-size) + var(--border) + 2px);
-  width: var(--corner-size);
-  height: var(--corner-size);
+  left: calc(100% - var(--papernote-corner-size) + var(--border) + 2px);
+  width: var(--papernote-corner-size);
+  height: var(--papernote-corner-size);
 
-  background-color: color-mix(in srgb, var(--paper-bg), black 15%);
+  background-color: color-mix(in srgb, var(--papernote-bg-color), black 15%);
   
   filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.3));
   pointer-events: none;

@@ -1,0 +1,22 @@
+.wip {
+  --wip-yellow: #ffc200;
+  --wip-black: #050505;
+  --wip-radius: 8px;
+
+  position: relative;
+  background-color: var(--wip-yellow);
+  border: 3px solid var(--wip-black);
+  border-radius: var(--wip-radius);
+  padding: 20px; 
+  text-transform: uppercase;
+}
+
+.wip::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 4px solid var(--wip-black);
+  border-radius: var(--wip-radius);
+  pointer-events: none;
+}
+

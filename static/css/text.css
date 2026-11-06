@@ -1,0 +1,9 @@
+.center {
+    display: flex;
+    justify-content: center; /* Horizontally center children */
+    align-items: center;     /* Vertically center children */
+}
+
+.fill {
+    height: 100%;
+}

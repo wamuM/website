@@ -2,6 +2,8 @@
 @import "/static/css/window.css";
 @import "/static/css/footer.css";
 @import "/static/css/papernote.css";
+@import "/static/css/button.css";
+@import "/static/css/text.css";
 
 :root {
   --border-thickness: 2px;
@@ -9,6 +11,12 @@
 
 
 body {
+  background-color: var(--primary);
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  font-size: 16px;
+
+  line-height: 1.5;
   margin-top: 10px;
   width:100vw;
   min-height: 100vh;
@@ -16,19 +24,16 @@ body {
   gap: 12px; /* Spaces between grid elements */
   box-sizing: border-box;
 
-  grid-template-columns: 10px 1fr 4fr 10px ;
+  grid-template-columns: 10px 1fr 2fr 2fr 10px ;
 
   grid-template-areas: 
-    ".      nav    header  ."
-    ".      aside  main    ."
-    ".      aside  main    ."
-    "footer footer footer  footer";
+    ".      nav    header  header   ."
+    ".      aside  aboutMe aboutMe  ."
+    ".      aside  rooms   goodies  ."
+    "footer footer footer  footer   .";
 }
 body > :not(footer){
     width: 100%;
-}
-main {
-    grid-area: main;
 }
 nav {
     grid-area: nav;
@@ -42,3 +47,9 @@ aside {
 footer {
     grid-area: footer;
 }
+
+#aboutMe {grid-area: aboutMe;}
+#rooms {grid-area: rooms;}
+#goodies {grid-area: goodies;}
+#webring {grid-area: webring;}
+
