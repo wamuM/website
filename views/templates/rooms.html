@@ -10,18 +10,16 @@
         <nav class="papernote">
             <a href="/mansion">Go back to mansion</a>
         </nav>
-         <header class="window">
-             <h1>List of Rooms</h1>
-             <a href="/rooms/random">Go to a random room</a>
+         <header class="button">
+             <h1 class="center">List of Rooms</h1>
+             <a class="screen" href="/rooms/random">Go to a random room</a>
         </header>
-         <main class="window">
              {% for room in rooms %}
-             <article>
+             <article class="window" data-title="{{room.name}}">
                 <h2>{{room.name}}</h2>  
                 <p>{{room.description}}</p>
                 <a href="/rooms/{{room.id}}">Go</a>
              </article>
              {% endfor %}
-         </main> 
     </body>
 </html>

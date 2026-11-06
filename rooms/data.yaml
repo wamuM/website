@@ -9,3 +9,15 @@ fundraiser:
   description: Every donation counts. Today, it's Jeff Bezos. Tomorrow, it could be you.
   path: "fundraiser"
   visible: true
+
+box-expo:
+  name: Box Expo
+  description: A demo of all (or almost all) the CSS boxes I've defined
+  path: "demo"
+  visible: true
+
+error:
+  name: "[Error] Couldn't load name"
+  description: "[Error] Couldn't load description"
+  path: "error"
+  visible: true

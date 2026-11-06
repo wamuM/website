@@ -10,6 +10,12 @@
     --button-screen-bg-color: #303c30;
     --button-screen-color: #fff;
 }
+.red {
+    --button-bg-color: #cd6a6a;
+    --button-screen-bg-color: #422626;
+    --button-screen-color: #fff;
+}
+
 .button {
   background-color:  var(--button-bg-color);
   padding: 10px;
@@ -43,7 +49,7 @@
 .button a {
     color: var(--button-color);
 }
-.screen a {
+.button .screen, .screen a {
     color: var(--button-screen-color);
 }
 
