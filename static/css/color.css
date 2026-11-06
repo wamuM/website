@@ -1,0 +1,81 @@
+.white {
+    /* Pastel and contrast */
+    --primary-bg-color: #fff;
+    --primary-color: black;
+
+    /* Contrast and pastel */
+    --secondary-bg-color:grey;
+    --secondary-color: #fff;
+
+    --accent: grey;
+}
+
+.grey{
+    --primary-bg-color: #c3c6b8;
+    --primary-color: black;
+
+    --secondary-bg-color:#3e3f3b;
+    --secondary-color: #fff;
+
+    --accent: grey;
+}
+
+.green {
+    --primary-bg-color: #8fbc8f;
+    --primary-color: black;
+
+    --secondary-bg-color: #303c30;
+    --secondary-color: #fff;
+
+    --accent: green;
+}
+
+.purple{
+    --primary-bg-color: #9889c8;
+    --primary-color: black;
+
+    --secondary-bg-color: #332e40;
+    --secondary-color: #fff;
+
+    --accent:#8f77da;
+}
+
+.orange {
+    --primary-bg-color: #ff9060;
+    --primary-color: black;
+
+    --secondary-bg-color: #503123;
+    --secondary-color: #fff;
+
+    --accent: #ff681f;
+}
+.red {
+    --primary-bg-color: #cd6a6a;
+    --primary-color: black;
+
+    --secondary-bg-color: #422626;
+    --secondary-color: #fff;
+
+    --accent: #e84f4f;
+}
+
+.yellow {
+    --primary-bg-color: #ffff9f;
+    --primary-color: black;
+
+    --secondary-bg-color: #4f4e35;
+    --secondary-color: #fff;
+
+    --accent:#B47900 ;
+}
+
+.blue {
+    --primary-bg-color: #1dacd6;
+    --primary-color: black;
+
+    --secondary-bg-color: #1b3843;
+    --secondary-color: #fff;
+
+    --accent:#66a2dd;
+}
+

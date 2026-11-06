@@ -10,7 +10,7 @@ fundraiser:
   path: "fundraiser"
   visible: true
 
-box-expo:
+demo:
   name: Box Expo
   description: A demo of all (or almost all) the CSS boxes I've defined
   path: "demo"

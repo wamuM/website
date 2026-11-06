@@ -1,6 +1,6 @@
 .wip {
-  --wip-yellow: #ffc200;
-  --wip-black: #050505;
+  --wip-yellow: var(--primary-bg-color,#ffc200);
+  --wip-black: var(--primary-color,#050505);
   --wip-radius: 8px;
 
   position: relative;

@@ -5,11 +5,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Demo - wamu_M</title>
         <link href="/static/css/generic.css" rel="stylesheet">
+        <link href="/rooms/demo/header.css" rel="stylesheet">
+        <script src="/rooms/demo/color-pick.js" defer></script>
     </head>
     <body>
+        <header> 
+            <p>Color modifier:</p>
+            <select name="color" id="color">
+            <option value="white">  White   </option>
+            <option value="grey">   Grey    </option>
+            <option value="green">  Green   </option>
+            <option value="purple"> Purple  </option>
+            <option value="orange"> Orange  </option>
+            <option value="red">    Red     </option>
+            <option value="yellow"> Yellow  </option>
+            <option value="blue">   Blue    </option>
+            <option value="none" selected>   None    </option>
+            </select>
+        </header>
         <article class="wip">
             wip
         </article>
+
         <article class="window">
             <h1>window</h1>
             <h2>Lorem Ipsum</h2>
@@ -20,17 +37,17 @@
                 <li>window</li>
             </ul>
         </article>
+
         <article class="papernote">
-        papernote
+        <p>papernote</p>
+        <a>link</a>
         </article>
+
         <article class="button">
         button
         <p class="screen">screen</p>
         </article>
-        <article class="button green">
-        button green
-        <p class="screen">screen</p>
-        </article>
+
         <footer><a>link</a> <p>text</p></footer>
     </body>
 </html>

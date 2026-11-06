@@ -1,7 +1,8 @@
 @import "/static/css/root.css";
-:root {
+.window {
    --window-bg-color: #fff;
    --window-color: #000;
+   --window-accent: var(--accent,var(--secondary));
 
    --window-border-color: #c3c6b8;
    --window-border-thickness: 2px;
@@ -10,17 +11,16 @@
    --window-shadow-thickness: 6px;
 
    --window-titlebar-height: 28px;
-   --window-titlebar-bg-color: #232126;
-   --window-titlebar-color: #7a6fa0; 
-   --window-titlebar-color-hover: #c8bfe7; 
+   --window-titlebar-bg-color: var(--secondary-bg-color,#232126);
+   --color-initial: var(--secondary-color, var(--window-accent));
+   --window-titlebar-color: color-mix(in srgb, var(--color-initial), #000 20%); 
+   --window-titlebar-color-hover: var(--color-initial);
 
-   --window-terminal-bg-color: #232126;
-   --window-terminal-color: #7a6fa0; 
+   --window-terminal-bg-color: var(--secondary-bg-color, #232126);
+   --window-terminal-color: var(--secondary-color,#7a6fa0); 
 
    --window-line-color: var(--window-border-color);
    --window-line-height: 3px;
-}
-.window {
   background-color: var(--window-bg-color);
   border: var(--window-border-thickness) solid var(--window-border-color);
   box-shadow: var(--window-shadow-thickness) var(--window-shadow-thickness) 0px var(--window-shadow-color);
@@ -93,7 +93,7 @@ aside.window::before {
 }
 .window  h1::before {
   content: "$ ";
-  color: var(--accent);
+  color: var(--window-accent);
 }
 
 .window  p {
@@ -108,7 +108,7 @@ aside.window::before {
 }
 
 .window  a:hover {
-  background-color: var(--primary);
+  background-color: var(--window-accent);
   color: var(--window-color);
   text-decoration: none;
 }
@@ -121,7 +121,7 @@ aside.window::before {
 .window li::before {
   content: ">\00a0";
   font-weight: bold;
-  color: var(--accent);
+  color: var(--window-accent);
 }
 .window li:hover::before{
   content: "\00a0>";

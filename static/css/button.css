@@ -1,22 +1,9 @@
-:root {
-    --button-bg-color: #c3c6b8;
-    --button-color: #black;
-    --button-screen-bg-color:#3e3f3b;
-    --button-screen-color: #fff;
-    --button-thickness: 6px;
-}
-.green {
-    --button-bg-color: #8fbc8f;
-    --button-screen-bg-color: #303c30;
-    --button-screen-color: #fff;
-}
-.red {
-    --button-bg-color: #cd6a6a;
-    --button-screen-bg-color: #422626;
-    --button-screen-color: #fff;
-}
-
 .button {
+  --button-bg-color: var(--primary-bg-color,#c3c6b8);
+  --button-color: var(--primary-color,black);
+
+  --button-thickness: 6px;
+
   background-color:  var(--button-bg-color);
   padding: 10px;
   border-top: var(--button-thickness) solid color-mix(in srgb, var(--button-bg-color), #ffffff 50%);
@@ -27,6 +14,11 @@
 }
 
 .screen {
+    --button-screen-bg-color:var(--secondary-bg-color,#3e3f3b);
+    --button-screen-color: var(--secondary-color, #fff);
+
+    --button-thickness-sec: var(--button-thickness,6px);
+
     display: block;
     padding: 10px;
     height: auto;
@@ -38,10 +30,10 @@
         linear-gradient(to right, var(--line-color) 1px, transparent 1px),
         linear-gradient(to bottom, var(--line-color) 1px, transparent 1px);
     background-size: 3px 3px;
-    border-bottom: var(--button-thickness) solid color-mix(in srgb, var(--button-bg-color), #ffffff 50%);
-    border-right:  var(--button-thickness) solid color-mix(in srgb, var(--button-bg-color), #ffffff 50%);
-    border-top:    var(--button-thickness) solid color-mix(in srgb, var(--button-bg-color), #000000 60%);
-    border-left:   var(--button-thickness) solid color-mix(in srgb, var(--button-bg-color), #000000 60%);
+    border-bottom: var(--button-thickness-sec) solid color-mix(in srgb, var(--button-bg-color), #ffffff 50%);
+    border-right:  var(--button-thickness-sec) solid color-mix(in srgb, var(--button-bg-color), #ffffff 50%);
+    border-top:    var(--button-thickness-sec) solid color-mix(in srgb, var(--button-bg-color), #000000 60%);
+    border-left:   var(--button-thickness-sec) solid color-mix(in srgb, var(--button-bg-color), #000000 60%);
 }
 .button li, .screen li {
     list-style-type: none;

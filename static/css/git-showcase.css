@@ -1,0 +1,65 @@
+#git-showcase {
+    --bg: #d74933;
+    --color: white;
+    --repo: #FFE082;
+    --message: lightgrey;
+    display: block;
+    background-color: var(--bg);
+    color: var(--color);
+    padding:10px;
+    border-radius: 10px;
+    min-height:5lh;
+}
+#git-showcase span {
+    color: var(--color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#git-showcase .commit,
+#git-showcase .commit .message{
+    color: var(--message);
+    font-weight: normal;
+    text-decoration: none;
+}
+#git-showcase .commit .sha, #git-showcase .repo{
+    color: var(--repo);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#git-showcase a:hover{
+    background-color:var(--bg);
+}
+#git-showcase .repo,
+#git-showcase .commit .sha {
+    padding-left: 1ch;
+    padding-right: 1ch;
+}
+
+#git-showcase .repo:hover,
+#git-showcase .commit:hover .sha {
+    padding-left: 0ch;
+    padding-right: 0ch;
+}
+
+#git-showcase .commit:hover .message {
+    color: var(--color);
+}
+
+#git-showcase .repo:hover::before,
+#git-showcase .commit:hover .sha::before {
+    content: ">";
+    font-weight: bold;
+    color:var(--repo);
+    background-color var(--bg);
+}
+
+
+#git-showcase .repo:hover::after,
+#git-showcase .commit:hover .sha::after{
+    content: "<";
+    font-weight: bold;
+    color:var(--repo);
+    background-color var(--bg);
+}

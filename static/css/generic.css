@@ -5,6 +5,7 @@
 @import "/static/css/button.css";
 @import "/static/css/text.css";
 @import "/static/css/wip.css";
+@import "/static/css/color.css";
 
 body {
   background-color: var(--primary);
@@ -32,7 +33,6 @@ body > :not(footer) {
 }
 
 @media (max-width: 800px) {
-  /* 4. Allow footer traybar items to wrap if needed */
   body > :not(footer) {
  	width: calc(100% - 20px);
 	margin: 10px;

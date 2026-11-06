@@ -1,12 +1,8 @@
 @import url('/static/css/root.css');
 
-:root {
-  --footer-height: 32px;
-  --footer-bg-color: #c3c6b8; 
-}
-
 footer {
-
+  --footer-height: 32px;
+  --footer-bg-color: var(--primary-bg-color,#c3c6b8); 
   margin-top: auto;
   position: relative;
   height: var(--footer-height);
