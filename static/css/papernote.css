@@ -3,8 +3,13 @@
 
 .papernote {
   --papernote-bg-color: var(--primary-bg-color,#deb887);
+  --papernote-back-ini:
+    var(--secondary-bg-color, var(--papernote-bg-color));
+  --papernote-back-color: 
+    color-mix(in srgb, var(--papernote-back-ini), black 15%);
   --papernote-corner-size: 32px;
   --papernote-color: var(--primary-color,#black);
+
   color: var(--papernote-color);
   position: relative;
   font-family: "Patrick Hand", sans-serif;
@@ -38,7 +43,8 @@
   width: var(--papernote-corner-size);
   height: var(--papernote-corner-size);
 
-  background-color: color-mix(in srgb, var(--papernote-bg-color), black 15%);
+  background-color: var(--papernote-back-color);
+
   
   filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.3));
   pointer-events: none;

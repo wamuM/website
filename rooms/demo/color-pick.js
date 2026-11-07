@@ -1,16 +1,29 @@
 const select = document.getElementById('color');
+const toggle = document.getElementById('darkmode-toggle');
 
 const urlParams = new URLSearchParams(window.location.search);
-const colorParam = urlParams.get('color');
+let color    = urlParams.get('color') || "none";
+let darkmode = urlParams.get('dark') == 'true';
 
-if(colorParam)select.value = colorParam;
-document.body.className = colorParam;
+if(color)select.value = color;
+         toggle.checked = darkmode;
+updateClass()
 
-
+function updateClass(){
+    const url = new URL(window.location);
+    if(darkmode) url.searchParams.set('dark','true');
+    else url.searchParams.delete('dark');
+    url.searchParams.set('color',color);
+    window.history.replaceState(null, '', url.toString());
+    document.body.className =`${darkmode? "darkmode":""} ${color}`;
+}
 
 select.addEventListener('change', (e) => {
-  document.body.className = e.target.value;
-  const url = new URL(window.location);
-  url.searchParams.set('color', e.target.value);
-  window.history.replaceState(null, '', url.toString());
+    color = e.target.value;
+    updateClass();
+});
+
+toggle.addEventListener('change', (e) => {
+    darkmode = e.target.checked;
+    updateClass();
 });

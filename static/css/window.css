@@ -1,7 +1,7 @@
 @import "/static/css/root.css";
 .window {
-   --window-bg-color: #fff;
-   --window-color: #000;
+   --window-bg-color: var(--box-bg,white);
+   --window-color: var(--primary-color,black);
    --window-accent: var(--accent,var(--secondary));
 
    --window-border-color: #c3c6b8;
@@ -84,6 +84,7 @@ aside.window::before {
 
 
 .window  h1, .window  h2, .window  h3 {
+  color: var(--window-color);
   font-family: var(--font-mono);
   text-transform: uppercase;
   letter-spacing: -0.5px;
@@ -97,6 +98,7 @@ aside.window::before {
 }
 
 .window  p {
+  color: var(--window-color);
   margin-bottom: 14px;
 }
 
@@ -116,6 +118,10 @@ aside.window::before {
 .window ul {
   list-style-type: none;
   margin-bottom: 14px;
+}
+
+.window li {
+  color: var(--window-color);
 }
 
 .window li::before {

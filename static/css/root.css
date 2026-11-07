@@ -1,6 +1,4 @@
 :root {
-  --primary: #c8bfe7;
-  --secondary: #7a6fa0 ;
 
   --font-mono: "Courier New", Courier, monospace, ui-monospace;
   /**/
@@ -8,6 +6,7 @@
 }
 
 * {
+  color:var(--primary-color,black);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
