@@ -20,10 +20,10 @@ async function loadGitShowcase() {
     if (latestCommit) {
       showcase.innerHTML = `
           <p>
-          <span>Reposiory:</span><a class="repo" href="${latestCommit.repository.html_url}">${latestCommit.repository.name}</a>
+          <span>Reposiory:</span><a class="repo" href="${latestCommit.repository.html_url}" target="_blank">${latestCommit.repository.name}</a>
           </p>
           <p>
-          <span>Commit:</span><a class="commit" href="${latestCommit.html_url}" target="_blank" rel="noopener noreferrer">
+          <span>Commit:</span><a class="commit" href="${latestCommit.html_url}" target="_blank">
             <span class="sha">[${latestCommit.sha.substring(0,7)}]</span> <span class="message">${latestCommit.commit.message}</span>
           </a>
           </p>
