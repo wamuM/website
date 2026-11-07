@@ -30,10 +30,10 @@
         linear-gradient(to right, var(--line-color) 1px, transparent 1px),
         linear-gradient(to bottom, var(--line-color) 1px, transparent 1px);
     background-size: 3px 3px;
-    border-bottom: var(--button-thickness-sec) solid color-mix(in srgb, var(--button-bg-color), #ffffff 50%);
-    border-right:  var(--button-thickness-sec) solid color-mix(in srgb, var(--button-bg-color), #ffffff 50%);
-    border-top:    var(--button-thickness-sec) solid color-mix(in srgb, var(--button-bg-color), #000000 60%);
-    border-left:   var(--button-thickness-sec) solid color-mix(in srgb, var(--button-bg-color), #000000 60%);
+    border-bottom: var(--button-thickness-sec) solid color-mix(in srgb, var(--primary-bg-color, var(--primary-bg-color,#c3c6b8)), #ffffff 50%);
+    border-right:  var(--button-thickness-sec) solid color-mix(in srgb, var(--primary-bg-color, var(--primary-bg-color,#c3c6b8)), #ffffff 50%);
+    border-top:    var(--button-thickness-sec) solid color-mix(in srgb, var(--primary-bg-color, var(--primary-bg-color,#c3c6b8)), #000000 60%);
+    border-left:   var(--button-thickness-sec) solid color-mix(in srgb, var(--primary-bg-color, var(--primary-bg-color,#c3c6b8)), #000000 60%);
 }
 .button li, .screen li {
     list-style-type: none;
