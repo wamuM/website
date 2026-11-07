@@ -7,7 +7,7 @@ import Web.Scotty
 import Network.Wai.Middleware.Static (staticPolicy, noDots, hasPrefix, (>->))
 
 import Routes.Rooms (roomsRoutes)
-import Routes.Goodies (goodiesRoutes)
+import Routes.Snippets (snippetRoutes)
 
 main :: IO ()
 main = do
@@ -34,7 +34,8 @@ main = do
     get "/mansion" $ file "views/mansion.html"
 
     roomsRoutes
-    goodiesRoutes
+    snippetRoutes "quotes" "api/quotes"
+    snippetRoutes "goodies" "goodies"
 
     notFound $ file "views/errors/404.html"
 

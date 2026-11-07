@@ -1,27 +1,35 @@
+{% if goodies.meta.redirect %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url={{goodies.content}}">
+  <title>Redirecting...</title>
+</head>
+<body>
+    <p>If you are not redirected automatically, follow this <a href="{{goodies.content}}">link to {{goodies.name}}</a>.</p>
+</body>
+</html>
+{% else %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>wamu_M's Internet Goodies</title>
-        <link href="static/css/generic.css" rel="stylesheet">
+        <link href="/static/css/generic.css" rel="stylesheet">
     </head>
     <body>
-        <nav class="papernote">
-            <a href="/mansion">Go back to mansion</a>
+        <nav class="button yellow">
+            <ul class="screen">
+                <li><a href="/mansion">Go back to mansion</a></li>
+                <li><a href="/goodies/random">Go to a random goodie</a></li>
+            </ul>
         </nav>
-         <header class="window">
-             <h1>List of Goodies</h1>
-             <a href="/goodies/random">Go to a random goodie</a>
-        </header>
-         <main class="window">
-             {% for g in goodies %}
-             <article>
-                <h2>{{g.name}}</h2>  
-                <p>{{g.description}}</p>
-                <a href="/goodies/{{g.id}}">Go</a>
-             </article>
-             {% endfor %}
+         <main class="window yellow">
+             <h1>{{goodies.name}}</h1>
+             <p>{{goodies.content}}</p>
          </main> 
     </body>
 </html>
+{% endif %}

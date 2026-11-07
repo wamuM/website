@@ -14,8 +14,8 @@ build-type:     Simple
 executable webserver
   main-is: Main.hs
   other-modules:
-      Routes.Goodies
       Routes.Rooms
+      Routes.Snippets
       Paths_webserver
   hs-source-dirs:
       src
